@@ -10,9 +10,22 @@ This package provides cli tool to resolve all external references in Json based 
 - [OpenApi 3.x](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md)
 - [AsyncApi 2.x](https://www.asyncapi.com/docs/specifications/v2.4.0)
 
+## Installation
+```SH
+npm i -g api-ref-bundler-cli
+```
+
 ## Usage
 
-TBD
+```SH
+ref-bundler <filename> [-f <output format>] [-d <dest path>] [-t <file type>]
+```
+
+#### Output formats: `yaml`, `json`
+
+#### File type: `oas3` (default), `aas2`, `jsonschema`
+
+---
 
 ## Contributing
 When contributing, keep in mind that it is an objective of `api-ref-bundler-cli` to have no package dependencies. This may change in the future, but for now, no-dependencies.

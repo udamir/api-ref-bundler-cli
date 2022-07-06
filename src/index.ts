@@ -5,6 +5,8 @@ import { promises as fs } from "fs"
 import path from "path"
 import yaml from "js-yaml"
 
+const { version } = require('../package.json')
+
 const resolver = async (sourcePath: string): Promise<object> => {
   const file = await fs.readFile(path.join(process.cwd(), sourcePath), "utf8")
   return yaml.load(file) as object
@@ -29,7 +31,7 @@ const bundler = async (filename: string, type = "oas3", dest: string = "", forma
 
 export function cli(args: any) {
   program 
-    .version('1.0.1')
+    .version(version)
     .argument('<source>', 'OpenApi document')
     .alias('v')
     .description('Open')
