@@ -1,5 +1,5 @@
 {
-  "name": "@api-ref-bundler/cli",
+  "name": "api-ref-bundler-cli",
   "version": "0.0.1",
   "description": "Bundle external $ref in Json based API document into single document via CLI",
   "main": "dist/index.js",
