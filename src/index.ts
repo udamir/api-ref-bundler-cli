@@ -12,10 +12,9 @@ const resolver = async (sourcePath: string): Promise<object> => {
   return yaml.load(file) as object
 }
 
-const bundler = async (filename: string, type = "oas3", dest: string = "", format: "yaml" | "json" = "json") => {
-  const definitionsBasePath = type === "oas3" || type === "aas2" ? "/components/schemas" : "/$defs"
+const bundler = async (filename: string, dest: string = "", format: "yaml" | "json" = "json") => {
 
-  const refparser = new ApiRefBundler(filename, resolver, { definitionsBasePath })
+  const refparser = new ApiRefBundler(filename, resolver)
   const result = await refparser.run()
   if (refparser.errors.length) {
     throw new Error(refparser.errors[0])
@@ -39,19 +38,17 @@ export function cli(args: any) {
   program
     .option('-d, --dest [dest]', 'Output destination');
   program
-    .option('-t, --type [type]', 'Source type');
-  program
     .option('-f, --format [format]', 'Output format: "json" or "yaml"');
 
   program.parse(args)
 
   const options = program.opts()
-  const { type = "oas3", dest, format } = options
+  const { dest, format } = options
 
   const source = program.args[0]
 
   if (source) {
-    bundler(source, type, dest, format).then((path) => {
+    bundler(source, dest, format).then((path) => {
       console.log("Bundle build:", path)
     }).catch((error) => {
       console.error(error)

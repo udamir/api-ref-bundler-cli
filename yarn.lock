@@ -712,10 +712,10 @@ anymatch@^3.0.3:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-api-ref-bundler@0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/api-ref-bundler/-/api-ref-bundler-0.0.7.tgz#e1eb185d3339b8d0ffc88edd5873ca868983255e"
-  integrity sha512-nSHZmU4Ao0zO1L5dJlpY0NvKZ69fK4v+TJ50PeoPf/39dK4UjMp6zye7ZPL27tSKPLXRr6OD3P/Sie1E3aLvdA==
+api-ref-bundler@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/api-ref-bundler/-/api-ref-bundler-0.1.0.tgz#ef3a797c392b771094a8d325ec2b4c0b9927afd6"
+  integrity sha512-xvZki0/6DwoK5UsHagYkWt9FIyjRzo/D4FrwANAZZW/V1jfuLzwyWZ7+0Ldw+4WkABSIYCdUAwuNfS5cERnLFA==
 
 argparse@^1.0.7:
   version "1.0.10"
